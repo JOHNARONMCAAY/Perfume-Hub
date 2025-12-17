@@ -23,10 +23,10 @@ const Navigation = ({ onFiltersChange }) => {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="p-6 mb-6 bg-white border border-gray-200 rounded-lg">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div>
-          <h3 className="text-lg font-semibold text-black mb-3">Categories</h3>
+          <h3 className="mb-3 text-lg font-semibold text-black">Categories</h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleCategoryChange('All')}
@@ -55,7 +55,7 @@ const Navigation = ({ onFiltersChange }) => {
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold text-black mb-3">Scent Types</h3>
+          <h3 className="mb-3 text-lg font-semibold text-black">Scent Types</h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleScentChange('All')}
@@ -84,7 +84,7 @@ const Navigation = ({ onFiltersChange }) => {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-black mb-3">Gender</h3>
+          <h3 className="mb-3 text-lg font-semibold text-black">Gender</h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleGenderChange('All')}
