@@ -1,4 +1,3 @@
-// src/components/PerfumeCard.jsx
 import React, { useState } from 'react';
 import { getImageUrl } from '../utils/ImageUtils';
 import SeasonIndicator from './SeasonIndicator';
