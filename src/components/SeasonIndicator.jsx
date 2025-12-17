@@ -1,4 +1,3 @@
-// src/components/SeasonIndicator.jsx
 import React from 'react';
 
 const SeasonIndicator = ({ season }) => {
