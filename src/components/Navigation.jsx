@@ -1,4 +1,3 @@
-// src/components/Navigation.jsx
 import React, { useState } from 'react';
 import { categories, scentTypes } from '../data/perfumes';
 
