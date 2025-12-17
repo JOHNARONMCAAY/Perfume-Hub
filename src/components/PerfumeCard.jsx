@@ -17,7 +17,7 @@ const PerfumeCard = ({ perfume }) => {
   return (
     <div
       onClick={handleClick}
-      className="overflow-hidden transition bg-white border border-gray-200 shadow-sm cursor-pointer rounded-xl hover:shadow-md"
+      className="overflow-hidden transition duration-300 bg-white border border-gray-200 shadow-sm cursor-pointer  rounded-xl hover:shadow-lg hover:-translate-y-1"
     >
       <div className="relative" style={{ paddingTop: '133.33%' }}>
         {imageError ? (

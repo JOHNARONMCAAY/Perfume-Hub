@@ -75,7 +75,10 @@ const MainDashboard = () => {
         </div>
 
         {Object.entries(categorizedPerfumes).map(([category, perfumes]) => (
-          <CategorySection key={category} perfumes={perfumes} />
+          <CategorySection
+            key={`${category}-${filters.category}-${filters.scent}-${filters.gender}-${searchTerm}`}
+            perfumes={perfumes}
+          />
         ))}
 
         {filteredPerfumes.length === 0 && (
