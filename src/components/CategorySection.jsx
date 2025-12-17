@@ -1,4 +1,3 @@
-// src/components/CategorySection.jsx
 import React from 'react';
 import PerfumeCard from './PerfumeCard';
 
