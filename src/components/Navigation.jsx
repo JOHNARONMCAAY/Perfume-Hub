@@ -22,14 +22,18 @@ const Navigation = ({ onFiltersChange }) => {
   };
 
   return (
-    <div className="p-6 mb-6 bg-white border border-gray-200 rounded-lg">
+    <div className="p-4 mb-6 bg-white border border-gray-200 rounded-lg sm:p-6">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+
+        {/* CATEGORIES */}
         <div>
-          <h3 className="mb-3 text-lg font-semibold text-black">Categories</h3>
+          <h3 className="mb-3 text-base font-semibold text-black sm:text-lg">
+            Categories
+          </h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleCategoryChange('All')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedCategory === 'All'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -41,7 +45,7 @@ const Navigation = ({ onFiltersChange }) => {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-black text-white'
                     : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -52,13 +56,16 @@ const Navigation = ({ onFiltersChange }) => {
             ))}
           </div>
         </div>
-        
+
+        {/* SCENT TYPES */}
         <div>
-          <h3 className="mb-3 text-lg font-semibold text-black">Scent Types</h3>
+          <h3 className="mb-3 text-base font-semibold text-black sm:text-lg">
+            Scent Types
+          </h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleScentChange('All')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedScent === 'All'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -70,7 +77,7 @@ const Navigation = ({ onFiltersChange }) => {
               <button
                 key={scent}
                 onClick={() => handleScentChange(scent)}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                   selectedScent === scent
                     ? 'bg-black text-white'
                     : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -82,12 +89,15 @@ const Navigation = ({ onFiltersChange }) => {
           </div>
         </div>
 
+        {/* GENDER */}
         <div>
-          <h3 className="mb-3 text-lg font-semibold text-black">Gender</h3>
+          <h3 className="mb-3 text-base font-semibold text-black sm:text-lg">
+            Gender
+          </h3>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => handleGenderChange('All')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedGender === 'All'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -97,7 +107,7 @@ const Navigation = ({ onFiltersChange }) => {
             </button>
             <button
               onClick={() => handleGenderChange('Men')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedGender === 'Men'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -107,7 +117,7 @@ const Navigation = ({ onFiltersChange }) => {
             </button>
             <button
               onClick={() => handleGenderChange('Women')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedGender === 'Women'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -117,7 +127,7 @@ const Navigation = ({ onFiltersChange }) => {
             </button>
             <button
               onClick={() => handleGenderChange('Unisex')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 selectedGender === 'Unisex'
                   ? 'bg-black text-white'
                   : 'bg-gray-100 text-black hover:bg-gray-200'
@@ -127,6 +137,7 @@ const Navigation = ({ onFiltersChange }) => {
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

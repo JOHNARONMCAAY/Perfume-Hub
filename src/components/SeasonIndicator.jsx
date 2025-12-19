@@ -13,8 +13,21 @@ const SeasonIndicator = ({ season }) => {
   const seasonData = seasonInfo[season] || seasonInfo.Spring;
 
   return (
-    <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${seasonData.color} ${seasonData.text}`}>
-      <span className="mr-1">{seasonData.emoji}</span>
+    <div
+      className={`
+        inline-flex items-center
+        px-2 sm:px-3
+        py-0.5 sm:py-1
+        rounded-full
+        text-xs sm:text-sm
+        font-medium
+        ${seasonData.color}
+        ${seasonData.text}
+      `}
+    >
+      <span className="mr-1 text-sm sm:text-base">
+        {seasonData.emoji}
+      </span>
       {season}
     </div>
   );

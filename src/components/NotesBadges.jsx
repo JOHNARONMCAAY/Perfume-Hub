@@ -12,11 +12,17 @@ const NotesBadges = ({ notes, type }) => {
   const notesArray = notes.split(',').map(note => note.trim());
 
   return (
-    <div className="flex flex-wrap gap-2 mt-1">
+    <div className="flex flex-wrap gap-1 mt-1 sm:gap-2">
       {notesArray.map((note, index) => (
         <span
           key={index}
-          className={`px-3 py-1 text-sm rounded-full ${colorMap[type]}`}
+          className={`
+            px-2 sm:px-3
+            py-0.5 sm:py-1
+            text-xs sm:text-sm
+            rounded-full
+            ${colorMap[type]}
+          `}
         >
           {note}
         </span>

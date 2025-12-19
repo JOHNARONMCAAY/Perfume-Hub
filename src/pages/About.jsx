@@ -12,36 +12,36 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-4xl px-4 py-12 mx-auto">
+      <main className="max-w-4xl px-4 py-8 mx-auto sm:px-6 sm:py-12">
         {/* TITLE */}
         <div
           className={`
-            mb-12 text-center
+            mb-10 sm:mb-12 text-center
             transition-all duration-700
             ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
           `}
         >
-          <h2 className="mb-4 text-3xl font-bold text-black">
+          <h2 className="mb-4 text-2xl font-bold text-black sm:text-3xl">
             About Perfume Hub
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600">
+          <p className="max-w-2xl mx-auto text-sm text-gray-600 sm:text-base">
             Your ultimate destination for discovering the perfect fragrance
           </p>
         </div>
 
         {/* MISSION + OFFER */}
-        <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mb-10 sm:gap-8 sm:mb-12 md:grid-cols-2">
           <div
             className={`
-              p-6 rounded-lg bg-gray-50
+              p-4 sm:p-6 rounded-lg bg-gray-50
               transition-all duration-700 delay-100
               ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
             `}
           >
-            <h3 className="mb-3 text-xl font-semibold text-black">
+            <h3 className="mb-3 text-lg font-semibold text-black sm:text-xl">
               Our Mission
             </h3>
-            <p className="text-gray-700">
+            <p className="text-sm text-gray-700 sm:text-base">
               Perfume Hub is dedicated to helping fragrance enthusiasts discover their signature scent. 
               We provide a comprehensive browsing experience of designer, UAE, and local brand perfumes 
               with detailed fragrance notes and seasonal recommendations.
@@ -50,15 +50,15 @@ const About = () => {
           
           <div
             className={`
-              p-6 rounded-lg bg-gray-50
+              p-4 sm:p-6 rounded-lg bg-gray-50
               transition-all duration-700 delay-200
               ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
             `}
           >
-            <h3 className="mb-3 text-xl font-semibold text-black">
+            <h3 className="mb-3 text-lg font-semibold text-black sm:text-xl">
               What We Offer
             </h3>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-sm text-gray-700 sm:text-base">
               <li>• Extensive collection of designer perfumes</li>
               <li>• Popular UAE fragrance brands</li>
               <li>• Local perfume house selections</li>
@@ -68,19 +68,19 @@ const About = () => {
           </div>
         </div>
 
-        {/* HOW IT WORKS (STAGGERED) */}
+        {/* HOW IT WORKS */}
         <div
           className={`
-            p-8 rounded-lg bg-gray-50
+            p-5 sm:p-8 rounded-lg bg-gray-50
             transition-all duration-700 delay-300
             ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
           `}
         >
-          <h3 className="mb-4 text-2xl font-semibold text-center text-black">
+          <h3 className="mb-6 text-xl font-semibold text-center text-black sm:text-2xl">
             How It Works
           </h3>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
             {[
               {
                 title: 'Browse Categories',
@@ -104,21 +104,19 @@ const About = () => {
                 className={`
                   text-center
                   transition-all duration-700
-                  ${show
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'}
+                  ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
                 `}
                 style={{
                   transitionDelay: `${400 + index * 120}ms`,
                 }}
               >
-                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-xl font-bold text-white bg-black rounded-full">
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 text-base font-bold text-white bg-black rounded-full sm:w-16 sm:h-16 sm:text-xl">
                   {index + 1}
                 </div>
-                <h4 className="mb-2 font-semibold text-black">
+                <h4 className="mb-2 text-sm font-semibold text-black sm:text-base">
                   {item.title}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-sm text-gray-600 sm:text-base">
                   {item.desc}
                 </p>
               </div>
@@ -129,27 +127,29 @@ const About = () => {
         {/* CONTACT */}
         <div
           className={`
-            mt-12 text-center
+            mt-10 sm:mt-12 text-center
             transition-all duration-700 delay-[900ms]
             ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
           `}
         >
-          <h3 className="mb-4 text-xl font-semibold text-black">
+          <h3 className="mb-4 text-lg font-semibold text-black sm:text-xl">
             Contact Us
           </h3>
-          <p className="mb-4 text-gray-600">
+          <p className="mb-4 text-sm text-gray-600 sm:text-base">
             Have questions or suggestions? We'd love to hear from you!
           </p>
-          <p className="text-gray-700">
+          <p className="text-sm text-gray-700 sm:text-base">
             Email: contact@perfumehub.com
           </p>
         </div>
       </main>
 
-      <footer className="px-4 py-8 mt-12 text-white bg-gray-900">
+      <footer className="px-4 py-6 mt-12 text-white bg-gray-900 sm:py-8">
         <div className="mx-auto text-center max-w-7xl">
-          <p>© 2025 Perfume Hub. All rights reserved.</p>
-          <p className="mt-2 text-sm text-gray-400">
+          <p className="text-sm sm:text-base">
+            © 2025 Perfume Hub. All rights reserved.
+          </p>
+          <p className="mt-2 text-xs text-gray-400 sm:text-sm">
             A fragrance discovery experience
           </p>
         </div>

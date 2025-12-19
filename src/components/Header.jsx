@@ -1,58 +1,67 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ searchTerm, setSearchTerm }) => {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
-        
-        {/* LOGO */}
-        <h1 className="text-xl font-bold text-black">
-          Perfume Hub
-        </h1>
+    <header className="sticky top-0 z-50 bg-white border-b border-yellow-400">
+      <div className="px-4 py-4 mx-auto max-w-7xl">
 
-        {/* NAV */}
-        <nav className="flex space-x-8">
-          <NavItem to="/" label="Home" />
-          <NavItem to="/about" label="About" />
-        </nav>
+        {/* TOP ROW */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+          {/* LOGO */}
+          <div className="text-center md:text-left">
+            <h1 className="text-2xl font-bold text-yellow-500">
+              Perfume Hub
+            </h1>
+            <p className="text-sm text-gray-500">
+              Discover your perfect fragrance
+            </p>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-4">
+
+            {/* SEARCH BAR */}
+            <div className="w-full md:w-auto">
+              <input
+                type="text"
+                placeholder="Search perfume..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-2 text-gray-800 placeholder-gray-400 bg-white border border-yellow-400 rounded-lg  md:w-64 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+            </div>
+
+            {/* NAV */}
+            <nav className="flex justify-center gap-6">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-yellow-500 font-semibold'
+                    : 'text-gray-600 hover:text-yellow-500 transition'
+                }
+              >
+                Home
+              </NavLink>
+
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-yellow-500 font-semibold'
+                    : 'text-gray-600 hover:text-yellow-500 transition'
+                }
+              >
+                About
+              </NavLink>
+            </nav>
+
+          </div>
+        </div>
       </div>
     </header>
-  );
-};
-
-const NavItem = ({ to, label }) => {
-  return (
-    <NavLink
-      to={to}
-      className={({ isActive }) =>
-        `
-        relative pb-1 text-sm font-medium transition-all duration-300
-        ${isActive ? 'text-black' : 'text-gray-500 hover:text-black'}
-        `
-      }
-    >
-      {({ isActive }) => (
-        <>
-          <span
-            className={`inline-block transition-all duration-300 ${
-              isActive ? 'translate-y-0 opacity-100' : 'translate-y-1 opacity-90'
-            }`}
-          >
-            {label}
-          </span>
-
-          {/* UNDERLINE ANIMATION */}
-          <span
-            className={`
-              absolute left-0 -bottom-0.5 h-[2px] bg-black
-              transition-all duration-300 ease-out
-              ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}
-            `}
-          />
-        </>
-      )}
-    </NavLink>
   );
 };
 

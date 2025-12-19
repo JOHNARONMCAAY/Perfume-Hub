@@ -17,11 +17,12 @@ const PerfumeCard = ({ perfume }) => {
   return (
     <div
       onClick={handleClick}
-      className="overflow-hidden transition duration-300 bg-white border border-gray-200 shadow-sm cursor-pointer  rounded-xl hover:shadow-lg hover:-translate-y-1"
+      className="overflow-hidden transition-transform duration-200 bg-white border border-yellow-400 cursor-pointer select-none  group rounded-xl will-change-transform hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-300/40"
     >
-      <div className="relative" style={{ paddingTop: '133.33%' }}>
+      {/* IMAGE */}
+      <div className="relative aspect-[3/4] bg-gray-100">
         {imageError ? (
-          <div className="absolute inset-0 flex items-center justify-center text-sm text-gray-400 bg-gray-100">
+          <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-400 sm:text-sm">
             Image not available
           </div>
         ) : (
@@ -34,11 +35,12 @@ const PerfumeCard = ({ perfume }) => {
         )}
       </div>
 
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-black">
+      {/* CONTENT */}
+      <div className="p-3 sm:p-4">
+        <h3 className="text-sm font-bold text-black sm:text-base line-clamp-2">
           {perfume.name}
         </h3>
-        <p className="text-sm text-gray-600">
+        <p className="mt-1 text-xs text-gray-600 sm:text-sm">
           {perfume.scentType}
         </p>
       </div>
